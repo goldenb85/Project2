@@ -23,6 +23,14 @@ session = Session(engine)
 #################################################
 app = Flask(__name__)
 
+# # reflect an existing database into a new model
+# Base = automap_base()
+# # reflect the tables
+# Base.prepare(engine, reflect=True)
+
+# # Save references to each table
+# popul = Base.classes.popul
+
 
 #################################################
 # Flask Routes
@@ -32,84 +40,70 @@ def welcome():
     return (
         f"Welcome to the USA population API!<br/>"
         f"Available Routes:<br/>"
-        f"/api/population<br/>"
-
+        f"/api/population/<br/>"        
+        f"/api/population/2013<br/>"
+        f"/api/population/2014<br/>"
+        f"/api/population/2015<br/>"
+        f"/api/population/2016<br/>"
+        f"/api/population/2017<br/>"
+        f"/api/population/2018<br/>"
     )
 @app.route("/api/population/")
-def some_function():
+def population():
     df_query = pd.read_sql_query("select * from population_table", con=engine)
     popul_data = df_query.to_json()
     return popul_data
+        # Create our session (link) from Python to the DB
+    # session = Session(engine)
 
+    # """Return a list of all Precipitation Data"""
+    # # Query all Precipitation
+    # results = session.query(popul.id_state, popul.state,popul.id_year,popul.year,popul.population,popul.slug_state).all()
 
+    # session.close()
+ 
+    # # Convert the list to Dictionary
+    # all_popul = []
+    # for id_state,state,id_year,year,population,slug_state  in results:
+    #     popul_dict = {}
+    #     popul_dict["id_state"] = id_state
+    #     popul_dict["state"] = state
+    #     popul_dict["id_year"] = id_year
+    #     popul_dict["year"] = year
+    #     popul_dict["population"] = population
+    #     popul_dict["slug_state"] = slug_state       
+    #     all_popul.append(popul_dict)
 
-# @app.route("/api/v1.0/precipitation")
-# def precipitation():
-#     """Return the precipitation data for the last year"""
-#     # Calculate the date 1 year ago from last date in database
-#     prev_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
-
-#     # Query for the date and precipitation for the last year
-#     precipitation = session.query(Measurement.date, Measurement.prcp).\
-#         filter(Measurement.date >= prev_year).all()
-
-#     # Dict with date as the key and prcp as the value
-#     precip = {date: prcp for date, prcp in precipitation}
-#     return jsonify(precip)
-
-
-# @app.route("/api/v1.0/stations")
-# def stations():
-#     """Return a list of stations."""
-#     results = session.query(Station.station).all()
-
-#     # Unravel results into a 1D array and convert to a list
-#     stations = list(np.ravel(results))
-#     return jsonify(stations)
-
-
-# @app.route("/api/v1.0/tobs")
-# def temp_monthly():
-#     """Return the temperature observations (tobs) for previous year."""
-#     # Calculate the date 1 year ago from last date in database
-#     prev_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
-
-#     # Query the primary station for all tobs from the last year
-#     results = session.query(Measurement.tobs).\
-#         filter(Measurement.station == 'USC00519281').\
-#         filter(Measurement.date >= prev_year).all()
-
-#     # Unravel results into a 1D array and convert to a list
-#     temps = list(np.ravel(results))
-
-#     # Return the results
-#     return jsonify(temps)
-
-
-# @app.route("/api/v1.0/temp/<start>")
-# @app.route("/api/v1.0/temp/<start>/<end>")
-# def stats(start=None, end=None):
-#     """Return TMIN, TAVG, TMAX."""
-
-#     # Select statement
-#     sel = [func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
-
-#     if not end:
-#         # calculate TMIN, TAVG, TMAX for dates greater than start
-#         results = session.query(*sel).\
-#             filter(Measurement.date >= start).all()
-#         # Unravel results into a 1D array and convert to a list
-#         temps = list(np.ravel(results))
-#         return jsonify(temps)
-
-#     # calculate TMIN, TAVG, TMAX with start and stop
-#     results = session.query(*sel).\
-#         filter(Measurement.date >= start).\
-#         filter(Measurement.date <= end).all()
-#     # Unravel results into a 1D array and convert to a list
-#     temps = list(np.ravel(results))
-#     return jsonify(temps)
-
-
+    # return jsonify(all_popul)
+@app.route("/api/population/2013")
+def population2013():
+    df_query = pd.read_sql_query("select * from population_table where id_year=2013", con=engine)
+    popul_data = df_query.to_json()
+    return popul_data
+@app.route("/api/population/2014")
+def population2014():
+    df_query = pd.read_sql_query("select * from population_table where id_year=2014", con=engine)
+    popul_data = df_query.to_json()
+    return popul_data
+@app.route("/api/population/2015")
+def population2015():
+    df_query = pd.read_sql_query("select * from population_table where id_year=2015", con=engine)
+    popul_data = df_query.to_json()
+    return popul_data
+@app.route("/api/population/2016")
+def population2016():
+    df_query = pd.read_sql_query("select * from population_table where id_year=2016", con=engine)
+    popul_data = df_query.to_json()
+    return popul_data
+@app.route("/api/population/2017")
+def population2017():
+    df_query = pd.read_sql_query("select * from population_table where id_year=2017", con=engine)
+    popul_data = df_query.to_json()
+    return popul_data
+@app.route("/api/population/2018")
+def population2018():
+    df_query = pd.read_sql_query("select * from population_table where id_year=2018", con=engine)
+    popul_data = df_query.to_json()
+    return popul_data
 if __name__ == '__main__':
     app.run()
