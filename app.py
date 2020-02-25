@@ -23,13 +23,7 @@ session = Session(engine)
 #################################################
 app = Flask(__name__)
 
-# # reflect an existing database into a new model
-# Base = automap_base()
-# # reflect the tables
-# Base.prepare(engine, reflect=True)
 
-# # Save references to each table
-# popul = Base.classes.popul
 
 
 #################################################
@@ -42,7 +36,7 @@ def home():
 
 @app.route("/api/population/")
 def population():
-    df_query = pd.read_sql_query("select * from population_table", con=engine)
+    df_query = pd.read_sql_query("select id_state,state,id_year as year,population from population_table", con=engine)
     popul_data = df_query.to_json()
     return popul_data
    
