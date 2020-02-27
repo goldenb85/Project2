@@ -8,18 +8,19 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
 from flask import Flask, jsonify,request, render_template
-# from flask_cors import CORS
-# CORS(app,origins=r'http://localhost:8000')
+from flask_cors import CORS
+
+
 #################################################
 # Database Setup
 #################################################
 engine = create_engine('postgres+psycopg2://postgres:password@localhost:5432/project2_db')
- 
+
 #################################################
 # Flask Setup
 #################################################
 app = Flask(__name__)
-
+CORS(app,origins=r'http://localhost:8000')
 #################################################
 # Flask Routes
 #################################################
@@ -34,10 +35,11 @@ def population():
     
     
     results =[]
-    results = engine.execute("select id_year,state,population from population_table")
+    results = engine.execute("select  id_year,state,population from population_table")
     all_state=[]
     for id_year,state,population in results:
         population_dict = {}
+        
         population_dict["id_year"]=id_year
         population_dict["state"]=state
         population_dict["population"]=population
