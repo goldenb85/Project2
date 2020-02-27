@@ -8,23 +8,17 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
 from flask import Flask, jsonify,request, render_template
-
-
+# from flask_cors import CORS
+# CORS(app,origins=r'http://localhost:8000')
 #################################################
 # Database Setup
 #################################################
 engine = create_engine('postgres+psycopg2://postgres:password@localhost:5432/project2_db')
-
-# Create our session (link) from Python to the DB
-session = Session(engine)
-
+ 
 #################################################
 # Flask Setup
 #################################################
 app = Flask(__name__)
-
-
-
 
 #################################################
 # Flask Routes
@@ -36,10 +30,20 @@ def home():
 
 @app.route("/api/population/")
 def population():
-    df_query = pd.read_sql_query("select id_state,state,id_year as year,population from population_table", con=engine)
-    popul_data = df_query.to_json()
-    return popul_data
-   
+    # Create our session (link) from Python to the DB
+    
+    
+    results =[]
+    results = engine.execute("select id_year,state,population from population_table")
+    all_state=[]
+    for id_year,state,population in results:
+        population_dict = {}
+        population_dict["id_year"]=id_year
+        population_dict["state"]=state
+        population_dict["population"]=population
+        all_state.append(population_dict)
+     
+    return jsonify(all_state)
 # @app.route("/api/population/2013")
 # def population2013():
 #     df_query = pd.read_sql_query("select * from population_table where id_year=2013", con=engine)
