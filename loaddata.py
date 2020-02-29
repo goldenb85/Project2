@@ -22,7 +22,7 @@ json_file = "Resources/population.json"
 data = json.load(json_file)
 from pandas.io.json import json_normalize
 df=json_normalize(data['data']) 
-df.reindex(index=range(0,312))
+
 df.rename(columns={"ID State": "id_state", "State": "state",
                    "ID Year":"id_year","Year":"year",
                    "Population":"population","Slug State":"slug_state"})

@@ -7,9 +7,9 @@ DATA USA:https://datausa.io/api/data?drilldowns=State&measures=Population
 Toolset:
 Python & Flask, PostgresSQL, HTML, CSS, Bootstrap, Javascript, Leaflet.js, D3 for Map visualizations.
 Credits:
-Meagan Colley:
-Micheal Becker: DATA visualizations--HTML, CSS
-Xinliang Huang: Data Extraction from API, store data into PostgresSQL, create Flask to pull API
+Meagan Colley: Create Geomap of each state percentage of population for 2018
+Micheal Becker: DATA visualizations--HTML, CSS, Geomap
+Xinliang Huang: Data Extraction from API, store data into PostgresSQL, create Flask to pull API, create line chart of population average for each year
 <p> Here is a Dataset preview in Postgres SQL: </p>
 <img src='Resources/population_state.png'/>
 
