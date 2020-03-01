@@ -14,5 +14,6 @@ Xinliang Huang: Data Extraction from API, store data into PostgresSQL, create Fl
 <img src='Resources/population_state.png'/>
 
 <p> Chart: </p>
-
+<img src='Resources/total_population.png'/>
+<img src='Resources/average_population.png'/>
 <p> Geomap: </p>
