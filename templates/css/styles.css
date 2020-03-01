@@ -1,0 +1,54 @@
+/* remove default margin and padding from body */
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* set map, body, and html to 100% of the screen size */
+#map,
+body,
+html {
+  height: 100%;
+}
+.hero {
+  position: relative;
+  height: 500px;
+  padding: 20px;
+  margin: 0;
+  background: white;
+  background-image: url("https://arcamatech.com/wp-content/uploads/2017/09/usa-map.png");
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: 500px ;
+  
+
+}
+.hero2 {
+  position: relative;
+  height: 1200px;
+  padding: 20px;
+  margin: 0;
+  background: lightskyblue;
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-size: auto;
+}
+
+.hero3{
+  position: relative;
+  height: 1200px;
+  padding: 20px;
+  margin: 0;
+  
+  background-image: url("https://greatrussianballet.com/wp-content/uploads/2019/05/USA.png");
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-size: cover ;
+}
+.navbar{
+  font-size: xx-large;
+  font-weight: bold;
+  }
+.footer {
+  background: deepskyblue;
+}
