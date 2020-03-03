@@ -12,7 +12,7 @@ html {
 }
 .hero {
   position: relative;
-  height: 500px;
+  height: 350px;
   padding: 20px;
   margin: 0;
   background: white;
@@ -25,7 +25,7 @@ html {
 }
 .hero2 {
   position: relative;
-  height: 1400px;
+  height: 1050px;
   padding: 20px;
   margin: 0;
   
@@ -138,4 +138,8 @@ font-weight: 600;
 .legend i.icon {
   background-size: 18px;
   background-color: rgb(211, 206, 206);
+}
+img {
+  width: 700px;
+  height: 1000px;
 }
