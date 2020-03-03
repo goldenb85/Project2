@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="css/styles.css" media="screen">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/dumbbell.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
   </head>
 
   <body>
@@ -24,34 +30,29 @@
                 <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="Map.html">Geomap</a>
                 <a class="nav-item nav-link" href="Charts.html">Charts</a>
-                <a class="nav-item nav-link" href="dumbell.html">Dumbell</a>
+                <a class="nav-item nav-link" href="dumbell.html">Dumbbell</a>
             </div>
         </div>
 </nav>
-<div class="hero3">
+
+<div class="hero4">
 <!-- Start of container -->
 <div class="container">
   <section class="row">
     <div class="col-md-12">
-      <h2 class="comparison-header">Charts</h2>
+      <h2 class="comparison-header font-size=large">Dumbell</h2>
     </div>
     <div class="col-md-12">
-      <h4 class= "chart header">Total Population</h4>
-      <!-- <a href="Charts.html"><img src="#" alt="Chart image" class="comparison-image"></a> -->
-      <div id="plot1"></div>
+
+      <div id="plot1">
       <hr class="visible-xs visible-sm">
     </div>
-    <div class="col-md-12">
-      <h4 class= "chart header">Population Average</h4>
-      <!-- <a href="Charts.html"><img src="#" alt="Chart image" class="comparison-image"></a> -->
-      <div id="plot2"></div>
-      <hr class="visible-xs visible-sm">
-      
-    </div> 
-    <script src="../static/js/plots.js"></script>
+
+    <script src="../static/js/dumbell_logic.js"></script>
   </section>
 </div>
 </div>
+
 <footer class="footer">
   <span class="bottom">USA Population</span>
   <div class="footer">&copy; Copyright Michael Becker, Meagan Colley, Xinliang Huang 2020

@@ -28,6 +28,7 @@ html {
   height: 1400px;
   padding: 20px;
   margin: 0;
+  
   background: lightskyblue;
   background-attachment: fixed;
   background-position: bottom center;
@@ -45,10 +46,96 @@ html {
   background-position: bottom center;
   background-size: cover ;
 }
+.hero4{
+  position: relative;
+  height: 650px;
+  padding: 20px;
+  margin: 0;
+  
+  background-image: url("https://greatrussianballet.com/wp-content/uploads/2019/05/USA.png");
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-size: cover ;
+}
 .navbar{
   font-size: xx-large;
   font-weight: bold;
   }
 .footer {
   background: deepskyblue;
+}
+
+
+
+.highcharts-figure, .highcharts-data-table table {
+  min-width: 310px;
+  max-width: 800px;
+  margin: 1em auto;
+}
+.highcharts-description{
+  color:white;
+  font-weight:bold;
+  font-size: large;
+}
+.highcharts-data-table table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #EBEBEB;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+.highcharts-data-table caption {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: #555;
+}
+.highcharts-data-table th {
+font-weight: 600;
+  padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+  padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+  background: #F8F8F8;
+}
+.highcharts-data-table tr:hover {
+  background: #F1F7FF;
+}
+/*Legend specific*/
+.legend {
+  padding: 6px 8px;
+  font: 14px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
+  /*border-radius: 5px;*/
+  line-height: 24px;
+  color: #555;
+}
+.legend h4 {
+  text-align: center;
+  font-size: 16px;
+  margin: 2px 12px 8px;
+  color: #777;
+}
+
+.legend span {
+  position: relative;
+  bottom: 3px;
+}
+
+.legend i {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin: 0 8px 0 0;
+  opacity: 0.7;
+}
+
+.legend i.icon {
+  background-size: 18px;
+  background-color: rgb(211, 206, 206);
 }
