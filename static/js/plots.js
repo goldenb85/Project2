@@ -1,5 +1,5 @@
-// d3.json("http://127.0.0.1:5000/api/population/").then((data) => {
-d3.json("pop.json").then((data) => {  
+d3.json("http://127.0.0.1:5000/api/population/").then((data) => {
+// d3.json("pop.json").then((data) => {  
         
         function filter2013(data){
           return data.id_year===2013;

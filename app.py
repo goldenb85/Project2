@@ -20,14 +20,14 @@ engine = create_engine('postgres+psycopg2://postgres:password@localhost:5432/pro
 # Flask Setup
 #################################################
 app = Flask(__name__)
-CORS(app,origins=r'http://localhost:8000')
+CORS(app)
 #################################################
 # Flask Routes
 #################################################
 @app.route("/")
 def home():
-    popul_data = []
-    return render_template("index.html", popul_data=popul_data)
+    
+    return render_template("index.html")
 
 @app.route("/api/population/")
 def population():
